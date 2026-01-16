@@ -1,0 +1,299 @@
+/* ---------------------------
+   General Page Styles
+---------------------------- */
+html,
+body {
+    min-height: 100%;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    /* restore white text */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: url("/images/Tech Background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+main {
+    flex: 1;
+    padding: 40px 20px;
+}
+
+/* ---------------------------
+   Navigation
+---------------------------- */
+nav {
+    background: #222;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* ---------------------------
+   Navbar Layout
+---------------------------- */
+.navbar {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    background: #222;
+    padding: 14px 30px;
+}
+
+.nav-left {
+    justify-self: start;
+}
+
+.nav-logo {
+    width: 60px;
+    height: auto;
+    transform: scale(1.45);
+    /* adjust this value */
+    transform-origin: left center;
+}
+
+.nav-center {
+    justify-self: center;
+}
+
+.nav-center a {
+    color: #fff;
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.05rem;
+}
+
+.nav-center a:hover {
+    text-decoration: underline;
+}
+
+/* ---------------------------
+   Page Titles
+---------------------------- */
+.page-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* ---------------------------
+   Accolades Grid
+---------------------------- */
+.accolades-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    padding: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+    .accolades-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.accolades-item {
+    background-color: #fff;
+    color: #000;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* horizontal centering */
+    justify-content: center;
+    /* vertical centering */
+
+}
+
+.accolades-item img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: transform 0.2s ease;
+}
+
+.accolades-item img:hover {
+    transform: scale(1.05);
+}
+
+.caption {
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+/* ---------------------------
+   Resume Layout
+---------------------------- */
+.resume-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.resume-image img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.resume-image img:hover {
+    transform: scale(1.05);
+}
+
+.resume-text {
+    flex: 1;
+    min-width: 250px;
+}
+
+/* ---------------------------
+   Social Logos
+---------------------------- */
+.social-logos {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 40px auto 0;
+}
+
+.social-logos a img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.social-logos a img:hover {
+    transform: scale(1.2);
+}
+
+.social-logos-wrapper {
+    grid-column: 1 / -1;
+    /* span full grid width */
+    display: flex;
+    justify-content: center;
+    /* center horizontally */
+    margin-top: 30px;
+    /* space from last certificate */
+}
+
+/* ---------------------------
+   Back to Top Button
+---------------------------- */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    color: #000;
+    border-radius: 8px;
+    font-size: 28px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.back-to-top:hover {
+    transform: translateY(-3px);
+    background-color: #f0f0f0;
+}
+
+/* ---------------------------
+   Modal
+---------------------------- */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 8px;
+    cursor: zoom-in;
+    transition: transform 0.3s ease;
+}
+
+.modal-content.zoomed {
+    transform: scale(1.5);
+    cursor: zoom-out;
+}
+
+#modalCaption {
+    margin-top: 15px;
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 32px;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* ---------------------------
+   Footer
+---------------------------- */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

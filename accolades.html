@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Accolades | Jason Portfolio</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="/">
+                <img src="/images/favicon.png" alt="JG Logo" class="nav-logo">
+            </a>
+        </div>
+
+        <div class="nav-center">
+            <a href="/">Home</a>
+            <a href="/resume">Resume</a>
+            <a href="/accolades">Accolades</a>
+        </div>
+    </nav>
+
+
+    <!-- Main Content -->
+    <main>
+        <h1 class="page-title">Accolades & Certifications</h1>
+
+        <div class="accolades-grid">
+
+            <div class="accolades-item">
+                <img src="/images/Certificate 1.png" alt="Certification 1">
+                <div class="caption">Introduction to Software Engineering, 2026</div>
+            </div>
+
+            <div class="accolades-item">
+                <img src="/images/Certificate 2.png" alt="Certification 2">
+                <div class="caption">Java Programming for Beginners, 2026</div>
+            </div>
+
+            <div class="accolades-item">
+                <img src="/images/Certificate 3.png" alt="Certification 3">
+                <div class="caption">Object-Oriented Programming in Java</div>
+            </div>
+
+            <div class="accolades-item">
+                <img src="/images/Certificate 4.png" alt="Certification 4">
+                <div class="caption">Java App Developement Project: Fundamentals, OOP, and File I/O</div>
+            </div>
+
+            <div class="accolades-item">
+                <img src="/images/Certificate 5.png" alt="Certification 5">
+                <div class="caption">Introduction to HTML, CSS, & JavaScript</div>
+            </div>
+
+            <div class="accolades-item">
+                <img src="/images/Certificate 6.png" alt="Certification 6">
+                <div class="caption">Getting Started with Git and Github</div>
+            </div>
+
+            <div class="accolades-item">
+                <img src="/images/Certificate 7.png" alt="Certification 7">
+                <div class="caption">Spring Framework for Java Development</div>
+            </div>
+            <!---
+            <div class="accolades-item">
+                <img src="/images/cert-placeholder.jpg" alt="Certification 8">
+                <div class="caption">Certification 8</div>
+            </div>
+
+            <div class="accolades-item">
+                <img src="/images/cert-placeholder.jpg" alt="Certification 9">
+                <div class="caption">Certification 9</div>
+            </div>
+
+            <div class="accolades-item">
+                <img src="/images/cert-placeholder.jpg" alt="Certification 10">
+                <div class="caption">Certification 10</div>
+            </div>
+
+            <div class="accolades-item">
+                <img src="/images/cert-placeholder.jpg" alt="Certification 11">
+                <div class="caption">Certification 11</div>
+            </div>
+
+            <div class="accolades-item">
+                <img src="/images/cert-placeholder.jpg" alt="Certification 12">
+                <div class="caption">Certification 12</div>
+            </div>
+
+            <div class="accolades-item">
+                <img src="/images/cert-placeholder.jpg" alt="Certification 13">
+                <div class="caption">Certification 13</div>
+            </div>
+
+            <div class="accolades-item">
+                <img src="/images/cert-placeholder.jpg" alt="Certification 14">
+                <div class="caption">Certification 14</div>
+            </div> -->
+
+            <!-- Social Logos -->
+            <!-- Social Logos Wrapper -->
+            <div class="social-logos-wrapper">
+                <div class="social-logos">
+                    <a href="https://www.linkedin.com/in/jason-geissler-1230101a7" target="_blank"
+                        aria-label="LinkedIn">
+                        <img src="/images/linkedin logo.jpg" alt="LinkedIn Logo">
+                    </a>
+                    <a href="https://github.com/jason-geissler" target="_blank" aria-label="GitHub">
+                        <img src="/images/github logo.jpg" alt="GitHub Logo">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Back to Top Button -->
+            <a href="#" class="back-to-top">&#8679;</a>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2026 Jason Geissler · <a href="https://jgeiss.dev">jgeiss.dev</a>
+    </footer>
+
+    <!-- Modal for Accolade Images -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="modalCaption"></div>
+    </div>
+
+    <!-- JavaScript for Modal and Zoom -->
+    <script>
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("modalImage");
+        const modalCaption = document.getElementById("modalCaption");
+        const closeBtn = document.querySelector(".close");
+
+        // Make all accolade images clickable
+        document.querySelectorAll(".accolades-item img").forEach(img => {
+            img.onclick = () => {
+                modal.style.display = "flex";
+                modalImg.src = img.src;
+                modalCaption.textContent = img.alt;
+                modalImg.classList.remove("zoomed"); // reset zoom
+            };
+        });
+
+        // Toggle zoom on modal image click
+        modalImg.onclick = () => {
+            modalImg.classList.toggle("zoomed");
+        };
+
+        // Close modal
+        closeBtn.onclick = () => modal.style.display = "none";
+        modal.onclick = (e) => {
+            if (e.target === modal) modal.style.display = "none";
+        };
+
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") modal.style.display = "none";
+        });
+    </script>
+
+</body>
+
+</html>

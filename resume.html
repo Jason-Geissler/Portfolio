@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Resume | Jason Portfolio</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="/">
+                <img src="/images/favicon.png" alt="JG Logo" class="nav-logo">
+            </a>
+        </div>
+
+        <div class="nav-center">
+            <a href="/">Home</a>
+            <a href="/resume">Resume</a>
+            <a href="/accolades">Accolades</a>
+        </div>
+    </nav>
+
+
+    <!-- Main Content -->
+    <main>
+        <h1 class="page-title">Resume & Projects</h1>
+
+        <div class="resume-container">
+            <!-- Left: Resume image placeholder -->
+            <div class="resume-image">
+                <img id="resumeImage" src="/images/resume.png" alt="Resume Image">
+            </div>
+
+            <!-- Right: Resume text/content -->
+            <div class="resume-text">
+                <h2>Jason Geissler</h2>
+                <p><strong>Personal and Academic Projects</strong></p>
+
+                <h3>Project 1: Personal Portfolio Website</h3>
+                <p>Designed and developed a full-stack personal portfolio website using Java (Spring Boot), HTML, CSS,
+                    and JavaScript to showcase projects, skills, and certifications.
+                    Focused on responsive design, clean UI, and backend integration to support scalability and future
+                    features.</p>
+
+                <h3>Project 2: Inventory Management System</h3>
+                <p>Developed a backend-focused inventory management application that supports CRUD operations, user
+                    authentication, and role-based access.
+                    Built with a focus on data integrity, performance, and real-world business workflows.</p>
+
+                <h3>Project 3: E-Commerce Platform</h3>
+                <p>Developed a fully functional e-commerce website for CueCraftCo — a custom cue and accessories brand —
+                    showcasing products, handling user shopping behaviors, and streamlining the online purchase process.
+                    Implemented product browsing, search, shopping cart, and checkout features with a focus on
+                    responsive design, intuitive navigation, and secure transactions.
+                    Integrated backend services for inventory management, order processing, and customer data handling
+                    to create a seamless shopping experience from browsing to delivery.</p>
+
+            </div>
+        </div>
+
+        <!-- Social Logos -->
+        <div class="social-logos">
+            <a href="https://www.linkedin.com/in/jason-geissler-1230101a7" target="_blank" aria-label="LinkedIn">
+                <img src="/images/linkedin logo.jpg" alt="LinkedIn Logo">
+            </a>
+            <a href="https://github.com/jason-geissler" target="_blank" aria-label="GitHub">
+                <img src="/images/github logo.jpg" alt="GitHub Logo">
+            </a>
+        </div>
+
+        <!-- Back to Top Button -->
+        <a href="#" class="back-to-top">&#8679;</a>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2026 Jason Geissler · <a href="https://jgeiss.dev">jgeiss.dev</a>
+    </footer>
+
+    <!-- Modal for Resume Image -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="modalCaption"></div>
+    </div>
+
+    <!-- JavaScript for Modal and Zoom -->
+    <script>
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("modalImage");
+        const modalCaption = document.getElementById("modalCaption");
+        const closeBtn = document.querySelector(".close");
+
+        // Open modal on image click
+        const resumeImg = document.getElementById("resumeImage");
+        resumeImg.onclick = () => {
+            modal.style.display = "flex";
+            modalImg.src = resumeImg.src;
+            modalCaption.textContent = resumeImg.alt;
+            modalImg.classList.remove("zoomed"); // reset zoom
+        };
+
+        // Toggle zoom on modal image click
+        modalImg.onclick = () => {
+            modalImg.classList.toggle("zoomed");
+        };
+
+        // Close modal
+        closeBtn.onclick = () => modal.style.display = "none";
+        modal.onclick = (e) => {
+            if (e.target === modal) modal.style.display = "none";
+        };
+
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") modal.style.display = "none";
+        });
+    </script>
+
+</body>
+
+</html>
