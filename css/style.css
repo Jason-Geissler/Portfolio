@@ -296,4 +296,28 @@ footer a {
 
 footer a:hover {
     text-decoration: underline;
+
+}
+
+/* ---------------------------
+   About Section Text Box
+---------------------------- */
+.about-text-box {
+    background: rgba(255, 255, 255, 0.95);
+    color: #111;
+    padding: 2.5rem 3rem;
+    border-radius: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    line-height: 1.7;
+    font-size: 1.1rem;
+}
+
+.about-text-box p {
+    margin-bottom: 1.25rem;
+}
+
+.about-text-box p:last-child {
+    margin-bottom: 0;
 }
