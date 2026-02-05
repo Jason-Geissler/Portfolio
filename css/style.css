@@ -321,3 +321,19 @@ footer a:hover {
 .about-text-box p:last-child {
     margin-bottom: 0;
 }
+
+/* ---------------------------
+   Resume Projects Box (like About)
+---------------------------- */
+.resume-text-box.projects {
+    background: rgba(255, 255, 255, 0.95); /* White background with slight transparency */
+    color: #000;                            /* Black text */
+    padding: 2.5rem 3rem;                   /* Space inside the box */
+    border-radius: 20px;                     /* Rounded edges */
+    max-width: 900px;                        /* Keep consistent with About section */
+    margin: 0 auto;                          /* Center horizontally */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+    line-height: 1.7;
+    font-size: 1.1rem;
+}
+
