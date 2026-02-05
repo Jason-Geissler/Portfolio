@@ -148,11 +148,12 @@ nav a:hover {
 /* ---------------------------
    Resume Layout
 ---------------------------- */
+/* Resume container (flex) */
 .resume-container {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap;      /* allows stacking on small screens */
     gap: 30px;
-    max-width: 900px;
+    max-width: 1200px;    /* a bit wider to accommodate image + text box */
     margin: 0 auto;
 }
 
@@ -322,18 +323,15 @@ footer a:hover {
     margin-bottom: 0;
 }
 
-/* ---------------------------
-   Resume Projects Box (like About)
----------------------------- */
+/* Text box inside resume container */
 .resume-text-box.projects {
-    background: rgba(255, 255, 255, 0.95); /* White background with slight transparency */
-    color: #000;                            /* Black text */
-    padding: 2.5rem 3rem;                   /* Space inside the box */
-    border-radius: 20px;                     /* Rounded edges */
-    max-width: 900px;                        /* Keep consistent with About section */
-    margin: 0 auto;                          /* Center horizontally */
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+    flex: 1 1 500px;        /* flex-grow:1, flex-shrink:1, flex-basis:500px */
+    background: rgba(255, 255, 255, 0.95);
+    color: #000;
+    padding: 2.5rem 3rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
     line-height: 1.7;
     font-size: 1.1rem;
+    min-width: 300px;       /* prevent box from getting too small */
 }
-
