@@ -380,17 +380,17 @@ footer a:hover {
 }
 
 .featured-accolade img {
-    width: 60%;       /* bigger than grid items */
+    width: 80%;       /* bigger than grid items */
     max-width: 600px; /* responsive max width */
     border-radius: 12px;
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.3s ease;
-    box-shadow: 0 0 20px rgba(255, 215, 0, 0.6); /* subtle gold glow */
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.6); /* subtle cyan glow */
 }
 
 .featured-accolade img:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 30px rgba(255, 223, 0, 0.9); /* brighter glow on hover */
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.9); /* brighter cyan glow on hover */
 }
 
 .featured-accolade .caption {
@@ -408,7 +408,5 @@ footer a:hover {
     left: 50%;
     transform: translateX(-50%);
     font-size: 2rem;
-    text-shadow: 0 0 8px gold, 0 0 12px gold;
+    text-shadow: 0 0 8px cyan, 0 0 12px cyan; /* cyan glow for the star */
 }
-
-
