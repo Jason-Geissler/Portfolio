@@ -364,3 +364,51 @@ footer a:hover {
     color: #fff;
 }
 
+/* ---------------------------
+   Featured Accolade at Top
+---------------------------- */
+.featured-accolade-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px; /* space between featured and grid */
+    position: relative; /* for the star */
+}
+
+.featured-accolade {
+    text-align: center;
+    position: relative;
+}
+
+.featured-accolade img {
+    width: 60%;       /* bigger than grid items */
+    max-width: 600px; /* responsive max width */
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.6); /* subtle gold glow */
+}
+
+.featured-accolade img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(255, 223, 0, 0.9); /* brighter glow on hover */
+}
+
+.featured-accolade .caption {
+    margin-top: 15px;
+    font-size: 1.4rem; /* slightly bigger */
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Star icon accent */
+.featured-accolade::before {
+    content: "⭐";
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    text-shadow: 0 0 8px gold, 0 0 12px gold;
+}
+
+
