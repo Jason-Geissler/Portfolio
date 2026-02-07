@@ -335,3 +335,32 @@ footer a:hover {
     font-size: 1.1rem;
     min-width: 300px;       /* prevent box from getting too small */
 }
+
+/* Featured Accolade */
+.featured-accolade {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px; /* space between featured and grid */
+}
+
+.featured-accolade img {
+    width: 50%;
+    max-width: 500px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.featured-accolade img:hover {
+    transform: scale(1.05);
+}
+
+.featured-accolade .caption {
+    margin-top: 15px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+}
+
